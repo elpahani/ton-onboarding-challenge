@@ -20,48 +20,52 @@
 - **Стили**: CSS Grid, Flexbox, CSS Variables
 - **Шрифты**: Inter (Google Fonts)
 
-## 📦 Установка
+## 📦 Быстрый старт
 
-1. **Клонируйте репозиторий:**
+### 1. Клонирование репозитория
 ```bash
 git clone <your-repo-url>
 cd flask-pwa-app
 ```
 
-2. **Создайте виртуальное окружение:**
+### 2. Создание виртуального окружения
 ```bash
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate  # Linux/Mac
 # или
 venv\Scripts\activate     # Windows
 ```
 
-3. **Установите зависимости:**
+### 3. Установка зависимостей
 ```bash
 pip install -r requirements.txt
 ```
 
-4. **Создайте файл .env:**
+### 4. Запуск приложения
 ```bash
-cp .env.example .env
-# Отредактируйте .env файл при необходимости
-```
-
-## 🚀 Запуск
-
-### Режим разработки
-```bash
-export FLASK_ENV=development
 python app.py
 ```
 
-### Продакшн режим
+### 5. Открытие в браузере
+Откройте http://localhost:5000
+
+## 🚀 Альтернативные способы запуска
+
+### Через run.py (рекомендуется для разработки)
 ```bash
-export FLASK_ENV=production
-python app.py
+python run.py
 ```
 
-Приложение будет доступно по адресу: http://localhost:5000
+### Через Docker
+```bash
+docker-compose up
+```
+
+### Через Docker build
+```bash
+docker build -t flask-pwa .
+docker run -p 5000:5000 flask-pwa
+```
 
 ## 📱 PWA Функции
 
@@ -84,9 +88,11 @@ python app.py
 ```
 flask-pwa-app/
 ├── app.py                 # Основной Flask сервер
+├── run.py                 # Альтернативный запуск
 ├── requirements.txt       # Python зависимости
 ├── .env.example          # Пример переменных окружения
 ├── README.md             # Документация
+├── SETUP.md              # Быстрый старт
 ├── templates/
 │   └── index.html        # Главная страница
 ├── static/
@@ -97,7 +103,8 @@ flask-pwa-app/
 │   │   └── sw-register.js # Регистрация Service Worker
 │   ├── icons/            # Иконки PWA
 │   └── sw.js             # Service Worker
-└── .gitignore            # Git ignore файл
+├── Dockerfile            # Docker конфигурация
+└── docker-compose.yml    # Docker Compose
 ```
 
 ## 🔧 API Endpoints
@@ -166,22 +173,29 @@ heroku create your-app-name
 git push heroku main
 ```
 
+### Vercel
+```bash
+vercel --prod
+```
+
 ### Docker
 ```bash
 docker build -t flask-pwa .
-docker run -p 5000:5000 flask-pwa
+docker run -d -p 80:5000 flask-pwa
 ```
 
 ## 🤝 Вклад в проект
 
 1. Форкните репозиторий
-2. Создайте ветку для новой функции
+2. Создайте ветку для новой функции (`git checkout -b feature/amazing-feature`)
 3. Внесите изменения
-4. Создайте Pull Request
+4. Создайте коммит (`git commit -m 'Add amazing feature'`)
+5. Отправьте в ветку (`git push origin feature/amazing-feature`)
+6. Создайте Pull Request
 
 ## 📄 Лицензия
 
-MIT License - см. файл LICENSE для деталей.
+Этот проект распространяется под лицензией MIT. См. файл `LICENSE` для деталей.
 
 ## 🆘 Поддержка
 
@@ -190,6 +204,15 @@ MIT License - см. файл LICENSE для деталей.
 - Обратитесь к документации Flask
 - Проверьте консоль браузера для ошибок
 
+## 📊 Статистика
+
+- **Версия**: 1.0.0
+- **Python**: 3.8+
+- **Flask**: 2.3.3
+- **Лицензия**: MIT
+
 ---
 
 Создано с ❤️ на Python и Flask
+
+**⭐ Не забудьте поставить звездочку репозиторию, если он вам понравился!**
